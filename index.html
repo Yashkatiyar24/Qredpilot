@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>QredPilot — AI Voice Operations for Financial Services</title>
+<meta name="description" content="QredPilot helps institutional lenders, NBFCs, and fintechs deploy AI voice agents that call, understand, qualify, and take action — in 10+ Indian dialects."/>
+<link rel="icon" type="image/png" href="assets/favicon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,0&display=swap" rel="stylesheet"/>
+<style>
+/* ============ Design tokens — Autonomous Fintech Precision ============ */
+:root{
+  --primary:#1E6BFF;
+  --primary-dark:#1753C7;
+  --primary-soft:#EFF6FF;
+  --primary-ring:rgba(30,107,255,.15);
+  --navy:#0B192C;
+  --navy-800:#12233D;
+  --navy-700:#1A3050;
+  --cyan:#38BDF8;
+  --ink:#0F172A;
+  --muted:#64748B;
+  --faint:#94A3B8;
+  --border:#E2E8F0;
+  --border-strong:#CBD5E1;
+  --line:#F1F5F9;
+  --canvas:#F8FAFC;
+  --card:#FFFFFF;
+  --green:#059669; --green-bg:#ECFDF5; --green-bd:#A7F3D0;
+  --red:#E11D48;   --red-bg:#FFF1F2;   --red-bd:#FECDD3;
+  --r-card:16px; --r-ctl:8px;
+  --shadow-1:0 1px 3px 0 rgba(11,25,44,.04),0 4px 12px 0 rgba(11,25,44,.03);
+  --shadow-2:0 10px 25px -5px rgba(11,25,44,.08),0 8px 10px -6px rgba(11,25,44,.04);
+  --shadow-3:0 25px 50px -12px rgba(11,25,44,.20);
+  --max:1200px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  margin:0;font-family:'Geist',system-ui,-apple-system,sans-serif;
+  color:var(--ink);background:var(--canvas);
+  -webkit-font-smoothing:antialiased;font-size:15px;line-height:1.6;
+  overflow-x:hidden;
+}
+img{max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:#DBEAFE;color:#0B192C}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle;user-select:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.num{font-feature-settings:"tnum" 1}
+
+/* ============ Typography ============ */
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.025em;color:var(--navy)}
+h1{font-size:clamp(36px,5vw,58px);line-height:1.08;letter-spacing:-.03em}
+h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15}
+h3{font-size:19px;line-height:1.35;font-weight:600;letter-spacing:-.015em}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--primary);margin-bottom:14px;
+}
+.kicker::before{content:"";width:22px;height:2px;background:var(--primary);border-radius:2px}
+.lede{font-size:17px;color:var(--muted);max-width:620px;margin:14px 0 0}
+.section{padding:96px 0}
+.section-head{max-width:720px;margin-bottom:52px}
+.center .section-head{margin-left:auto;margin-right:auto;text-align:center}
+.center .kicker{justify-content:center}
+.center .kicker::before{display:none}
+.center .lede{margin-left:auto;margin-right:auto}
+
+/* ============ Buttons ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  height:46px;padding:0 24px;border-radius:var(--r-ctl);
+  font:600 15px/1 'Geist',sans-serif;cursor:pointer;border:1px solid transparent;
+  transition:all .2s ease;white-space:nowrap;
+}
+.btn .material-symbols-outlined{font-size:19px}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 1px 2px rgba(11,25,44,.1),0 0 0 0 var(--primary-ring)}
+.btn-primary:hover{background:var(--primary-dark);box-shadow:0 4px 14px rgba(30,107,255,.35);transform:translateY(-1px)}
+.btn-ghost{background:var(--card);color:var(--navy);border-color:var(--border)}
+.btn-ghost:hover{background:var(--canvas);border-color:var(--border-strong)}
+.btn-navy{background:#fff;color:var(--navy)}
+.btn-navy:hover{background:var(--cyan);color:var(--navy)}
+.btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+
+/* ============ Header ============ */
+header{
+  position:fixed;inset:0 0 auto;z-index:100;height:72px;
+  background:rgba(255,255,255,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .25s,box-shadow .25s;
+}
+header.scrolled{border-bottom-color:var(--border);box-shadow:0 1px 10px rgba(11,25,44,.05)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand img{height:34px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .15s;position:relative;padding:6px 0}
+.nav-links a:hover{color:var(--navy)}
+.nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--primary);transition:right .2s ease}
+.nav-links a:hover::after{right:0}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.nav-cta .login{font-size:14px;font-weight:500;color:var(--muted)}
+.nav-cta .login:hover{color:var(--navy)}
+.nav-cta .btn{height:40px;padding:0 18px;font-size:14px}
+.burger{display:none;background:none;border:0;cursor:pointer;color:var(--navy);padding:6px}
+.burger .material-symbols-outlined{font-size:26px}
+.mobile-menu{display:none}
+@media(max-width:980px){
+  .nav-links,.nav-cta .login{display:none}
+  .burger{display:block}
+  .mobile-menu.open{
+    display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;z-index:99;
+    background:#fff;border-bottom:1px solid var(--border);box-shadow:var(--shadow-2);
+    padding:12px 24px 20px;gap:2px;
+  }
+  .mobile-menu a{padding:12px 4px;font-weight:500;color:var(--navy);border-bottom:1px solid var(--line);font-size:15px}
+  .mobile-menu a:last-child{border:0}
+}
+
+/* ============ Hero ============ */
+.hero{
+  position:relative;padding:150px 0 90px;overflow:hidden;
+  background:
+    radial-gradient(900px 480px at 8% -10%,rgba(30,107,255,.08),transparent 60%),
+    radial-gradient(700px 420px at 95% 20%,rgba(56,189,248,.09),transparent 60%),
+    linear-gradient(#FBFCFE,var(--canvas));
+}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(11,25,44,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(11,25,44,.035) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(ellipse 80% 65% at 50% 0%,#000 30%,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 65% at 50% 0%,#000 30%,transparent 75%);
+}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr}.hero{padding-top:120px}}
+.pill{
+  display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border-radius:999px;
+  background:#fff;border:1px solid var(--border);box-shadow:var(--shadow-1);
+  font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);
+}
+.pill .dot{position:relative;width:8px;height:8px}
+.pill .dot::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--primary);animation:ping 1.6s cubic-bezier(0,0,.2,1) infinite}
+.pill .dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--primary)}
+@keyframes ping{75%,100%{transform:scale(2.4);opacity:0}}
+.pill .sep{width:4px;height:4px;border-radius:50%;background:var(--border-strong)}
+.pill .ver{color:var(--muted);letter-spacing:.02em;text-transform:none;font-weight:500}
+.hero h1 .accent{
+  background:linear-gradient(100deg,var(--primary) 20%,var(--cyan));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .sub{font-size:19px;font-weight:500;color:#334155;margin:22px 0 10px;line-height:1.5}
+.hero .body{font-size:15.5px;color:var(--muted);max-width:540px;margin:0 0 30px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;padding-top:28px;border-top:1px solid var(--border);max-width:540px}
+.hero-metrics b{display:block;font-size:26px;font-weight:700;letter-spacing:-.02em;color:var(--navy)}
+.hero-metrics b.blue{color:var(--primary)}
+.hero-metrics span{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+
+/* Hero live-call card */
+.call-card{
+  position:relative;background:#fff;border:1px solid var(--border);border-radius:20px;
+  box-shadow:var(--shadow-3);overflow:hidden;
+}
+.call-card::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--primary),var(--cyan))}
+.call-top{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line)}
+.call-top .status{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--green)}
+.call-top .status .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(5,150,105,.15);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.4}}
+.call-top .lang{font-size:11px;font-weight:600;color:var(--muted);background:var(--canvas);border:1px solid var(--border);border-radius:999px;padding:3px 10px}
+.call-meta{display:flex;gap:8px;align-items:center;padding:12px 20px;background:var(--canvas);border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);flex-wrap:wrap}
+.call-meta b{color:var(--navy);font-weight:600}
+.call-meta .tag{background:#fff;border:1px solid var(--border);border-radius:999px;padding:2px 9px;font-size:11px;font-weight:500}
+.chat{padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+.bubble{max-width:88%;padding:11px 14px;border-radius:14px;font-size:13px;line-height:1.55;opacity:0;animation:rise .5s ease forwards}
+.bubble .who{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px}
+.bubble.ai{align-self:flex-start;background:var(--primary-soft);border:1px solid #BFDBFE;border-bottom-left-radius:4px;color:#1E3A5F}
+.bubble.ai .who{color:var(--primary)}
+.bubble.cust{align-self:flex-end;background:var(--canvas);border:1px solid var(--border);border-bottom-right-radius:4px;color:#334155}
+.bubble.cust .who{color:var(--muted)}
+.bubble:nth-child(1){animation-delay:.3s}.bubble:nth-child(2){animation-delay:1.1s}.bubble:nth-child(3){animation-delay:1.9s}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.telemetry{margin:0 20px 20px;background:var(--navy);border-radius:12px;padding:16px;color:#fff;opacity:0;animation:rise .5s ease .6s forwards}
+.telemetry .t-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.telemetry .t-head span{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7DA9FF}
+.telemetry .t-head .lat{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--cyan);font-weight:600}
+.telemetry .t-head .lat .material-symbols-outlined{font-size:14px}
+.t-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.t-cell{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:9px;padding:10px 12px}
+.t-cell em{display:block;font-style:normal;font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8CA3C7;margin-bottom:3px}
+.t-cell b{font-size:14px;font-weight:600;color:#fff}
+.t-cell i{display:block;font-style:normal;font-size:10.5px;color:var(--cyan);margin-top:2px}
+.t-action{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;background:rgba(30,107,255,.16);border:1px solid rgba(30,107,255,.4);border-radius:9px;padding:9px 12px;font-size:11.5px;font-weight:500;color:#D6E6FF}
+.t-action .ok{font-size:10px;font-weight:700;color:var(--cyan);letter-spacing:.06em}
+/* waveform */
+.wave{display:flex;align-items:center;gap:3px;height:22px}
+.wave i{width:3px;border-radius:2px;background:var(--cyan);animation:wv 1.1s ease-in-out infinite}
+.wave i:nth-child(2n){animation-delay:.15s;background:var(--primary)}
+.wave i:nth-child(3n){animation-delay:.3s}
+.wave i:nth-child(4n){animation-delay:.45s}
+@keyframes wv{0%,100%{height:5px}50%{height:20px}}
+
+/* ============ Trust strip ============ */
+.trust{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:#fff;padding:22px 0}
+.trust .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 36px}
+.trust .lbl{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.trust .item{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#475569}
+.trust .item .material-symbols-outlined{font-size:17px;color:var(--primary)}
+
+/* ============ Cards / generic ============ */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-card);padding:26px;box-shadow:none;transition:box-shadow .25s,border-color .25s,transform .25s}
+.card:hover{box-shadow:var(--shadow-1);border-color:var(--border-strong);transform:translateY(-2px)}
+.icon-chip{
+  width:42px;height:42px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;
+  background:var(--primary-soft);color:var(--primary);margin-bottom:16px;
+}
+.icon-chip .material-symbols-outlined{font-size:22px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(max-width:980px){.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}}
+
+/* ============ Platform layers ============ */
+.layers{position:relative}
+.orchestrator{
+  position:relative;margin:0 auto 20px;max-width:430px;text-align:center;
+  background:var(--navy);color:#fff;border-radius:14px;padding:18px 22px;box-shadow:var(--shadow-2);
+}
+.orchestrator b{display:block;font-size:15px;font-weight:600}
+.orchestrator span{font-size:11px;color:#8CA3C7;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.orchestrator .material-symbols-outlined{color:var(--cyan);font-size:22px;margin-bottom:4px}
+.conn{width:2px;height:34px;margin:0 auto;background:linear-gradient(var(--primary),transparent);position:relative}
+.conn::after{content:"";position:absolute;left:-2px;top:0;width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:drop 1.8s linear infinite}
+@keyframes drop{to{transform:translateY(30px);opacity:0}}
+.layer-card{position:relative;overflow:hidden}
+.layer-card .no{position:absolute;top:18px;right:20px;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--faint)}
+.layer-card p{color:var(--muted);font-size:14px;margin:8px 0 16px}
+.layer-card .chip{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--primary);background:var(--primary-soft);border:1px solid #BFDBFE;border-radius:999px;padding:4px 11px}
+
+/* ============ Product sections ============ */
+.product{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.product.flip .p-visual{order:-1}
+@media(max-width:980px){.product{grid-template-columns:1fr;gap:36px}.product.flip .p-visual{order:0}}
+.feature{display:flex;gap:14px;padding:16px 0;border-top:1px solid var(--line)}
+.feature:first-of-type{border-top:0}
+.feature .material-symbols-outlined{font-size:21px;color:var(--primary);flex:none;margin-top:2px}
+.feature b{display:block;font-size:15px;font-weight:600;color:var(--navy);margin-bottom:3px}
+.feature p{margin:0;font-size:13.5px;color:var(--muted)}
+.p-visual .panel{background:#fff;border:1px solid var(--border);border-radius:var(--r-card);box-shadow:var(--shadow-2);overflow:hidden}
+.panel-head{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--canvas)}
+.panel-head b{font-size:13px;font-weight:600;color:var(--navy)}
+.panel-head span{font-size:11px;color:var(--muted)}
+.badge{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;border-radius:999px;font-size:11px;font-weight:600}
+.badge.ok{background:var(--green-bg);color:var(--green);border:1px solid var(--green-bd)}
+.badge.info{background:var(--primary-soft);color:var(--primary);border:1px solid #BFDBFE}
+
+/* ops metrics + table */
+.ops-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.ops-metrics>div{background:#fff;padding:14px 16px}
+.ops-metrics em{display:block;font-style:normal;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.ops-metrics b{font-size:21px;font-weight:700;color:var(--navy);letter-spacing:-.02em}
+.ops-metrics i{display:block;font-style:normal;font-size:10.5px;color:var(--green);font-weight:500}
+@media(max-width:560px){.ops-metrics{grid-template-columns:1fr 1fr}}
+table.ops{width:100%;border-collapse:collapse;font-size:12.5px}
+table.ops th{background:var(--canvas);text-align:left;padding:9px 16px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line)}
+table.ops td{padding:12px 16px;border-top:1px solid var(--line);color:#334155}
+table.ops td.r{text-align:right;font-weight:500}
+table.ops tr:hover td{background:var(--canvas)}
+.pipeline{display:flex;align-items:center;gap:8px;padding:14px 18px;border-top:1px solid var(--line);background:var(--canvas);flex-wrap:wrap}
+.pipeline em{font-style:normal;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);width:100%}
+.pipeline .node{font-size:11.5px;font-weight:600;color:var(--navy);background:#fff;border:1px solid var(--border);border-radius:999px;padding:5px 12px}
+.pipeline .material-symbols-outlined{font-size:15px;color:var(--primary)}
+
+/* inspector */
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:16px 18px}
+.kv>div{background:var(--canvas);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.kv em{display:block;font-style:normal;font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);margin-bottom:3px}
+.kv b{font-size:14px;font-weight:600;color:var(--navy)}
+.summary{margin:0 18px 16px;background:var(--primary-soft);border:1px solid #BFDBFE;border-left:3px solid var(--primary);border-radius:10px;padding:13px 15px;font-size:13px;color:#1E3A5F;line-height:1.55}
+.summary em{display:flex;align-items:center;gap:6px;font-style:normal;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:6px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 18px}
+.actions button{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 13px;border-radius:8px;border:1px solid var(--border);background:#fff;font:500 12.5px 'Geist';color:#334155;cursor:pointer;transition:all .15s}
+.actions button:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-soft)}
+.actions .material-symbols-outlined{font-size:16px}
+
+/* ============ Steps ============ */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;counter-reset:step}
+@media(max-width:980px){.steps{grid-template-columns:1fr;gap:0}}
+.step{position:relative;padding:28px 22px 28px 0}
+.step::before{
+  content:"";position:absolute;top:49px;left:40px;right:-8px;height:2px;
+  background:repeating-linear-gradient(90deg,var(--border-strong) 0 6px,transparent 6px 12px);
+}
+.step:last-child::before{display:none}
+@media(max-width:980px){
+  .step{padding:18px 0 18px 58px}
+  .step::before{top:60px;bottom:-14px;left:20px;right:auto;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--border-strong) 0 6px,transparent 6px 12px)}
+}
+.step .n{
+  position:relative;z-index:1;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:#fff;border:1px solid var(--border);box-shadow:var(--shadow-1);color:var(--primary);margin-bottom:16px;
+}
+@media(max-width:980px){.step .n{position:absolute;left:0;top:14px}}
+.step .n .material-symbols-outlined{font-size:21px}
+.step em{display:block;font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.14em;color:var(--primary);margin-bottom:6px}
+.step em::before{counter-increment:step;content:"0" counter(step) " · "; color:var(--faint)}
+.step p{margin:0;font-size:13.5px;color:var(--muted);max-width:200px}
+@media(max-width:980px){.step p{max-width:none}}
+
+/* ============ Use cases ============ */
+.uc .card p{font-size:13.5px;color:var(--muted);margin:8px 0 0}
+.uc .card{position:relative}
+.uc .card::after{
+  content:"north_east";font-family:'Material Symbols Outlined';font-size:17px;color:var(--faint);
+  position:absolute;top:22px;right:22px;transition:all .2s;
+}
+.uc .card:hover::after{color:var(--primary);transform:translate(2px,-2px)}
+
+/* ============ Integrations ============ */
+.integrations{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
+@media(max-width:980px){.integrations{grid-template-columns:1fr;gap:36px}}
+.logo-chips{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0 26px}
+.logo-chips span{font-size:13px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);border-radius:999px;padding:8px 16px;transition:all .15s}
+.logo-chips span:hover{border-color:var(--primary);color:var(--primary)}
+.doc-links{display:flex;gap:18px;font-size:14px;font-weight:600;color:var(--primary)}
+.doc-links a:hover{text-decoration:underline}
+.code-panel{background:var(--navy);border-radius:var(--r-card);box-shadow:var(--shadow-3);overflow:hidden;font-size:12.5px}
+.code-head{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.code-head .dots{display:flex;gap:6px}
+.code-head .dots i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.15)}
+.code-head .ep{font:600 11.5px/1 ui-monospace,'SF Mono',Menlo,monospace;color:var(--cyan)}
+.code-head .badge-dark{font-size:10px;font-weight:600;color:#8CA3C7;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:3px 9px}
+.code-panel pre{margin:0;padding:18px 20px;overflow-x:auto;font:12.5px/1.75 ui-monospace,'SF Mono',Menlo,monospace;color:#C9D7F2}
+.code-panel .k{color:#7DA9FF}.code-panel .s{color:#7BD0A8}.code-panel .n{color:#F2CC60}
+.code-foot{display:flex;justify-content:space-between;padding:11px 20px;border-top:1px solid rgba(255,255,255,.08);font:11.5px ui-monospace,Menlo,monospace}
+.code-foot .ok{color:#34D399}.code-foot .lat{color:#8CA3C7}
+
+/* ============ Pillars & stats ============ */
+.pillar b.t{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:6px}
+.pillar h3{margin-bottom:8px}
+.pillar p{font-size:13.5px;color:var(--muted);margin:0}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:980px){.grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid-4{grid-template-columns:1fr}}
+.stats-band{margin-top:56px;background:var(--navy);border-radius:var(--r-card);padding:40px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;box-shadow:var(--shadow-2)}
+@media(max-width:980px){.stats-band{grid-template-columns:1fr 1fr}}
+.stats-band b{display:block;font-size:34px;font-weight:700;letter-spacing:-.03em;color:#fff}
+.stats-band b em{font-style:normal;color:var(--cyan)}
+.stats-band span{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8CA3C7}
+
+/* ============ Security (dark) ============ */
+.security{background:linear-gradient(180deg,var(--navy) 0%,#0E2036 100%);color:#fff;position:relative;overflow:hidden}
+.security::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(30,107,255,.18),transparent 65%);top:-280px;right:-180px}
+.security h2{color:#fff}
+.security .lede{color:#9FB2CC}
+.security .kicker{color:var(--cyan)}
+.security .kicker::before{background:var(--cyan)}
+.sec-card{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-card);padding:24px;transition:all .25s}
+.sec-card:hover{background:rgba(255,255,255,.07);border-color:rgba(56,189,248,.35);transform:translateY(-2px)}
+.sec-card .icon-chip{background:rgba(30,107,255,.18);color:var(--cyan)}
+.sec-card h3{color:#fff;font-size:16px}
+.sec-card p{font-size:13px;color:#9FB2CC;margin:8px 0 0}
+
+/* ============ Future ============ */
+.future-card{display:flex;gap:18px;align-items:flex-start}
+.future-card .icon-chip{margin:0;flex:none}
+.future-card p{font-size:13.5px;color:var(--muted);margin:6px 0 0}
+.soon{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);background:var(--primary-soft);border:1px solid #BFDBFE;border-radius:999px;padding:3px 9px;margin-left:8px;vertical-align:middle}
+
+/* ============ Final CTA ============ */
+.cta-panel{
+  position:relative;overflow:hidden;border-radius:24px;background:var(--navy);color:#fff;
+  padding:72px 32px;text-align:center;box-shadow:var(--shadow-3);
+}
+.cta-panel::before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(30,107,255,.3),transparent 62%);top:-350px;left:50%;transform:translateX(-50%)}
+.cta-panel h2{color:#fff;position:relative}
+.cta-panel p{position:relative;color:#9FB2CC;max-width:560px;margin:14px auto 32px;font-size:16px}
+.cta-panel .hero-ctas{position:relative;justify-content:center}
+.cta-proof{position:relative;display:flex;justify-content:center;gap:28px;margin-top:30px;flex-wrap:wrap}
+.cta-proof span{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:500;color:#9FB2CC}
+.cta-proof .material-symbols-outlined{font-size:17px;color:var(--cyan)}
+
+/* ============ Footer ============ */
+footer{background:#fff;border-top:1px solid var(--border);padding:64px 0 32px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:36px;margin-bottom:48px}
+@media(max-width:980px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
+.foot-brand img{height:30px;margin-bottom:16px}
+.foot-brand p{font-size:13px;color:var(--muted);max-width:300px;margin:0 0 16px}
+.foot-badges{display:flex;gap:8px;flex-wrap:wrap}
+.foot-badges span{font-size:10.5px;font-weight:600;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:4px 11px}
+.foot-col em{display:block;font-style:normal;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin-bottom:14px}
+.foot-col a{display:block;font-size:13.5px;color:var(--muted);padding:5px 0;transition:color .15s}
+.foot-col a:hover{color:var(--primary)}
+.foot-legal{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-top:24px;font-size:12.5px;color:var(--faint);flex-wrap:wrap}
+
+/* ============ Reveal on scroll ============ */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="QredPilot home">
+      <img src="assets/logo.png" alt="QredPilot"/>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#platform">Platform</a>
+      <a href="#ai-voice-calling">AI Voice Calling</a>
+      <a href="#ai-voice-ops">AI Voice Ops</a>
+      <a href="#voice-intelligence">Voice Intelligence</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#integrations">Integrations</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="login" href="#">Login</a>
+      <a class="btn btn-primary" href="book-demo-1.html">Book a Demo</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span class="material-symbols-outlined">menu</span></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mmenu" aria-label="Mobile">
+    <a href="#platform">Platform</a>
+    <a href="#ai-voice-calling">AI Voice Calling</a>
+    <a href="#ai-voice-ops">AI Voice Ops</a>
+    <a href="#voice-intelligence">Voice Intelligence</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#integrations">Integrations</a>
+    <a href="#security">Security</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="pill">
+        <span class="dot"></span>
+        AI Voice Operations for Financial Services
+        <span class="sep"></span>
+        <span class="ver">Engine v2.4 Live</span>
+      </div>
+      <h1 style="margin-top:22px">AI Voice Agents Built for <span class="accent">Financial Services.</span></h1>
+      <p class="sub">Automate customer conversations with AI that can call, understand, qualify, and take action.</p>
+      <p class="body">QredPilot helps institutional lenders, NBFCs, and fintechs deploy intelligent voice agents for instantaneous customer engagement, lead qualification, soft follow-ups, and end-to-end operational workflows.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="book-demo-1.html">Book a Demo <span class="material-symbols-outlined">arrow_forward</span></a>
+        <a class="btn btn-ghost" href="#ai-voice-calling"><span class="material-symbols-outlined" style="color:var(--primary)">play_circle</span> See AI Voice in Action</a>
+      </div>
+      <div class="hero-metrics num">
+        <div><b>&lt;450ms</b><span>Turnaround Latency</span></div>
+        <div><b>10+</b><span>Indian Dialects</span></div>
+        <div><b class="blue">99.4%</b><span>Intent Accuracy</span></div>
+      </div>
+    </div>
+
+    <div class="call-card" aria-hidden="true">
+      <div class="call-top">
+        <span class="status"><span class="dot"></span> LIVE CALL CONNECTED · <span class="num" id="callTimer">01:42</span></span>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <span class="lang">Hinglish · Natural</span>
+        </div>
+      </div>
+      <div class="call-meta">
+        <b>Rahul Sharma</b> · Lead #PL-8921 <span class="tag">Salaried (IT Sector)</span>
+      </div>
+      <div class="chat">
+        <div class="bubble ai"><span class="who"><span class="material-symbols-outlined" style="font-size:13px">graphic_eq</span> QredPilot AI Agent</span>"Namaste Rahul ji, main QredPilot automated credit desk se baat kar rahi hoon. Aapne instant pre-approved personal loan enquiry submit ki thi, kya hum baat kar sakte hain?"</div>
+        <div class="bubble cust"><span class="who"><span class="material-symbols-outlined" style="font-size:13px">person</span> Rahul (Applicant)</span>"Haan boliye, mujhe 5 lakh ka personal loan chahiye for home renovation."</div>
+        <div class="bubble ai"><span class="who"><span class="material-symbols-outlined" style="font-size:13px">graphic_eq</span> QredPilot AI Agent</span>"Bilkul! Aapka monthly salary account kaunse bank mein hai aur kya aapke paas 6 months bank statement available hai?"</div>
+      </div>
+      <div class="telemetry">
+        <div class="t-head">
+          <span>Real-Time Extraction Telemetry</span>
+          <span class="lat"><span class="material-symbols-outlined">bolt</span> 410ms Direct Stream</span>
+        </div>
+        <div class="t-grid">
+          <div class="t-cell"><em>Detected Intent</em><b>Personal Loan (New)</b><i>99.4% Confidence</i></div>
+          <div class="t-cell"><em>Desired Amount</em><b class="num">₹5,00,000</b><i>Home Renovation</i></div>
+        </div>
+        <div class="t-action"><span>Next Action: Trigger Instant WhatsApp Document Link</span><span class="ok">● READY</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="trust">
+  <div class="wrap row">
+    <span class="lbl">Institutional Grade</span>
+    <span class="item"><span class="material-symbols-outlined">verified_user</span> SOC2 Type II</span>
+    <span class="item"><span class="material-symbols-outlined">account_balance</span> RBI Compliant</span>
+    <span class="item"><span class="material-symbols-outlined">lock</span> AES-256 Encryption</span>
+    <span class="item"><span class="material-symbols-outlined">dns</span> 100% Indian Data Residency</span>
+    <span class="item"><span class="material-symbols-outlined">schedule</span> Deploys in 48 Hours</span>
+  </div>
+</div>
+
+<!-- ============ PLATFORM LAYERS ============ -->
+<section class="section center" id="platform">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Unified Voice Infrastructure</span>
+      <h2>One AI Voice Platform.<br/>Three Intelligence Layers.</h2>
+      <p class="lede">From making natural calls to understanding deep financial intent and triggering instantaneous operational execution.</p>
+    </div>
+    <div class="layers reveal">
+      <div class="orchestrator">
+        <span class="material-symbols-outlined">hub</span>
+        <b>Central Orchestrator</b>
+        <span>QredPilot AI Voice Operations Core · High Concurrency</span>
+      </div>
+      <div class="conn"></div>
+      <div class="grid-3" style="text-align:left">
+        <div class="card layer-card">
+          <span class="no">LAYER 01</span>
+          <span class="icon-chip"><span class="material-symbols-outlined">call</span></span>
+          <h3>AI Voice Calling</h3>
+          <p>Ultra-low latency conversational engine delivering human-like voice synthesis and spontaneous Indian dialect recognition.</p>
+          <span class="chip"><span class="material-symbols-outlined" style="font-size:14px">graphic_eq</span> Natural Turn-Taking</span>
+        </div>
+        <div class="card layer-card">
+          <span class="no">LAYER 02</span>
+          <span class="icon-chip"><span class="material-symbols-outlined">settings_suggest</span></span>
+          <h3>AI Voice Ops</h3>
+          <p>Autonomous campaign scheduler, lead queuing dispatcher, dynamic pacing controller, and automated operational retry pipelines.</p>
+          <span class="chip"><span class="material-symbols-outlined" style="font-size:14px">account_tree</span> Workflow Orchestration</span>
+        </div>
+        <div class="card layer-card">
+          <span class="no">LAYER 03</span>
+          <span class="icon-chip"><span class="material-symbols-outlined">psychology</span></span>
+          <h3>Voice Intelligence</h3>
+          <p>Contextual entity extraction, fraud signal monitoring, repayment propensity scoring, and real-time structured CRM webhook delivery.</p>
+          <span class="chip"><span class="material-symbols-outlined" style="font-size:14px">database</span> Structured CRM Output</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT 01 ============ -->
+<section class="section" id="ai-voice-calling" style="background:#fff;border-top:1px solid var(--border)">
+  <div class="wrap product">
+    <div class="reveal">
+      <span class="kicker">Product 01 · AI Voice Calling</span>
+      <h2>AI that talks to your customers.</h2>
+      <p class="lede" style="margin-bottom:26px">Deploy natural-sounding, hyper-realistic AI voice agents that handle customer conversations at massive enterprise scale without losing conversational nuance.</p>
+      <div class="feature">
+        <span class="material-symbols-outlined">call_made</span>
+        <div><b>Outbound &amp; Inbound Autonomous Calling</b><p>Engage hot inbound loan enquiries instantly or run outbound campaigns to re-engage lapsed applicants.</p></div>
+      </div>
+      <div class="feature">
+        <span class="material-symbols-outlined">fact_check</span>
+        <div><b>Lead Qualification &amp; Parameter Ingestion</b><p>Verify employment type, monthly turnover, active obligations, and loan eligibility on the fly.</p></div>
+      </div>
+      <div class="feature">
+        <span class="material-symbols-outlined">support_agent</span>
+        <div><b>Human Supervisor Seamless Handoff</b><p>Instantly transfer complex, high-value discussions to live underwriters with live audio stream history.</p></div>
+      </div>
+    </div>
+    <div class="p-visual reveal">
+      <div class="panel">
+        <div class="panel-head">
+          <div><b>Live Outbound Execution</b><br/><span>Dialer node #VOIP-09884 · Primary Trunk</span></div>
+          <span class="badge ok"><span class="material-symbols-outlined" style="font-size:13px">sensors</span> Active Stream</span>
+        </div>
+        <div style="padding:20px 18px">
+          <em style="font-style:normal;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)">Audio Spectrum &amp; Sentiment</em>
+          <div class="wave" style="height:56px;gap:4px;margin:14px 0 6px">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="badge info">High Intent / Polite</span>
+            <span class="num" style="font-size:11px;color:var(--muted)">00:01:42 elapsed</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-top:1px solid var(--line)">
+          <div style="background:#fff;padding:16px 18px">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:20px">translate</span>
+            <b style="display:block;font-size:13.5px;margin:6px 0 2px;color:var(--navy)">Multilingual Fluidity</b>
+            <span style="font-size:12px;color:var(--muted)">Hindi, Hinglish, Tamil, Telugu, Marathi &amp; English.</span>
+          </div>
+          <div style="background:#fff;padding:16px 18px">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:20px">speed</span>
+            <b style="display:block;font-size:13.5px;margin:6px 0 2px;color:var(--navy)">&lt;450ms Response</b>
+            <span style="font-size:12px;color:var(--muted)">Eliminates awkward pauses for organic human pacing.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT 02 ============ -->
+<section class="section" id="ai-voice-ops">
+  <div class="wrap product flip">
+    <div class="reveal">
+      <span class="kicker">Product 02 · AI Voice Ops</span>
+      <h2>Turn every call into an automated operation.</h2>
+      <p class="lede">Manage dynamic campaigns, conversations, outcomes, and automated escalations from one centralized voice operations platform.</p>
+    </div>
+    <div class="p-visual reveal">
+      <div class="panel">
+        <div class="ops-metrics num">
+          <div><em>Active Campaigns</em><b>14</b><i>98.2% Pacing Rate</i></div>
+          <div><em>Live Active Calls</em><b>1,280</b><i>Concurrency Peak</i></div>
+          <div><em>Lead Qual. Rate</em><b>78.4%</b><i>+14% vs Human Agent</i></div>
+          <div><em>Avg Handle Time</em><b>2m 14s</b><i>Optimized script</i></div>
+        </div>
+        <table class="ops num">
+          <thead><tr><th>Campaign Name</th><th style="text-align:right">Queued</th><th style="text-align:right">Exec.</th><th style="text-align:right">Qualified</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr>
+              <td style="font-weight:600;color:var(--navy)">Personal Loan Qualification Q3</td>
+              <td class="r">12,400</td><td class="r">82%</td><td class="r">76.5%</td>
+              <td><span class="badge info">Active Auto-Dial</span></td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--navy)">Pre-EMI Soft Reminder Cycle</td>
+              <td class="r">4,500</td><td class="r">95%</td><td class="r">91.0% PTP</td>
+              <td><span class="badge ok">Completed Batch</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pipeline">
+          <em>End-to-End Autonomous Pipeline</em>
+          <span class="node">Lead Ingestion</span><span class="material-symbols-outlined">arrow_forward</span>
+          <span class="node">AI Dial Trigger</span><span class="material-symbols-outlined">arrow_forward</span>
+          <span class="node">Intent Extraction</span><span class="material-symbols-outlined">arrow_forward</span>
+          <span class="node">CRM &amp; LOS Webhook</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT 03 ============ -->
+<section class="section" id="voice-intelligence" style="background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap product">
+    <div class="reveal">
+      <span class="kicker">Product 03 · Voice Intelligence</span>
+      <h2>Every conversation becomes intelligence.</h2>
+      <p class="lede" style="margin-bottom:26px">Turn unstructured customer voice dialogue into structured, verified insights that your risk officers, underwriting models, and CRM workflows can immediately act upon.</p>
+      <div class="feature">
+        <span class="material-symbols-outlined">analytics</span>
+        <div><b>Lead Quality Scoring</b><p>Proprietary risk &amp; propensity calculation based on vocal markers and financial responses.</p></div>
+      </div>
+      <div class="feature">
+        <span class="material-symbols-outlined">dataset</span>
+        <div><b>Zero-Loss Entity Capture</b><p>Extract PAN, Aadhaar consent, monthly revenue, company name, and loan terms verbatim.</p></div>
+      </div>
+    </div>
+    <div class="p-visual reveal">
+      <div class="panel">
+        <div class="panel-head">
+          <div><b>Voice Intelligence Inspector</b><br/><span>Conversation Analysis #REC-7712</span></div>
+          <span class="badge ok">Score: 94/100</span>
+        </div>
+        <div class="kv num">
+          <div><em>Loan Requirement</em><b>₹5,00,000</b></div>
+          <div><em>Existing EMI</em><b>₹14,200</b></div>
+          <div><em>Bureau Consent</em><b style="color:var(--green)">Granted</b></div>
+        </div>
+        <div class="summary">
+          <em><span class="material-symbols-outlined" style="font-size:14px">summarize</span> Actionable Executive Summary</em>
+          "Customer is interested in a personal loan. Requested callback tomorrow. Estimated requirement: ₹5L. Documents pending: income proof. Auto-scheduled follow-up call at 11:30 AM."
+        </div>
+        <div class="actions">
+          <button type="button"><span class="material-symbols-outlined">sync</span> Sync to Salesforce / FinnOne</button>
+          <button type="button"><span class="material-symbols-outlined">chat</span> Send WhatsApp Checklist</button>
+          <button type="button"><span class="material-symbols-outlined">escalator_warning</span> Escalate to Underwriter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section center" id="how-it-works">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Autonomous Execution Cycle</span>
+      <h2>From conversation to action.</h2>
+      <p class="lede">How QredPilot turns seconds of dialogue into verified financial execution.</p>
+    </div>
+    <div class="steps reveal" style="text-align:left">
+      <div class="step">
+        <span class="n"><span class="material-symbols-outlined">phone_in_talk</span></span>
+        <em>CONNECT</em>
+        <p>AI connects with the borrower via enterprise SIP trunks and adaptive pacing.</p>
+      </div>
+      <div class="step">
+        <span class="n"><span class="material-symbols-outlined">forum</span></span>
+        <em>CONVERSE</em>
+        <p>Understands context and responds naturally in Hindi, Hinglish, or English.</p>
+      </div>
+      <div class="step">
+        <span class="n"><span class="material-symbols-outlined">rule</span></span>
+        <em>QUALIFY</em>
+        <p>Verifies eligibility, credit requirement, income statements, and voice OTP consent.</p>
+      </div>
+      <div class="step">
+        <span class="n"><span class="material-symbols-outlined">psychology</span></span>
+        <em>UNDERSTAND</em>
+        <p>Converts raw audio into structured, auditable parameters with sentiment tags.</p>
+      </div>
+      <div class="step">
+        <span class="n"><span class="material-symbols-outlined">bolt</span></span>
+        <em>ACT</em>
+        <p>Triggers CRM updates, payment links, or instant underwriter escalations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ USE CASES ============ -->
+<section class="section center uc" id="solutions" style="background:#fff;border-top:1px solid var(--border)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Financial Operations</span>
+      <h2>Built for high-volume financial operations.</h2>
+      <p class="lede">Engineered to satisfy institutional compliance while dramatically cutting operational cost per funded account.</p>
+    </div>
+    <div class="grid-3 reveal" style="text-align:left">
+      <div class="card">
+        <span class="icon-chip"><span class="material-symbols-outlined">filter_alt</span></span>
+        <h3>Lead Qualification</h3>
+        <p>Automatically call and qualify every incoming digital lead in under 60 seconds, capturing intent and pre-verifying critical parameters.</p>
+      </div>
+      <div class="card">
+        <span class="icon-chip"><span class="material-symbols-outlined">payments</span></span>
+        <h3>Loan Sales</h3>
+        <p>Engage prospects, explain personalized pre-approved offers, answer repayment questions, and generate immediate loan applications.</p>
+      </div>
+      <div class="card">
+        <span class="icon-chip"><span class="material-symbols-outlined">verified_user</span></span>
+        <h3>Customer Verification</h3>
+        <p>Conduct structured KYC, workplace, and address confirmation conversations accompanied by tamper-proof voice audit trails.</p>
+      </div>
+      <div class="card">
+        <span class="icon-chip"><span class="material-symbols-outlined">event_repeat</span></span>
+        <h3>Follow-ups</h3>
+        <p>Proactively re-engage abandoned applications, remind borrowers about pending documentation uploads, and schedule underwriting reviews.</p>
+      </div>
+      <div class="card">
+        <span class="icon-chip"><span class="material-symbols-outlined">account_balance_wallet</span></span>
+        <h3>Collections &amp; Reminders</h3>
+        <p>Gentle, empathetic, and compliant early-bucket reminders that verify Promise to Pay (PTP) agreements and trigger dynamic UPI payment links.</p>
+      </div>
+      <div class="card">
+        <span class="icon-chip"><span class="material-symbols-outlined">headset_mic</span></span>
+        <h3>Customer Support</h3>
+        <p>Resolve tier-1 queries, dispatch NOC certificates, furnish interest rate certificates, and update contact details 24/7 with zero waiting time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTEGRATIONS ============ -->
+<section class="section" id="integrations">
+  <div class="wrap integrations">
+    <div class="reveal">
+      <span class="kicker">Fintech Integration</span>
+      <h2>Connect AI voice to your existing stack.</h2>
+      <p class="lede">API-first. Integration-ready. QredPilot seamlessly fits into your current Loan Origination Systems (LOS), CRM setups, and communication infrastructure via flexible webhooks and native connectors.</p>
+      <div class="logo-chips">
+        <span>Salesforce</span><span>LeadSquared</span><span>FinnOne Neo</span><span>Pennant</span><span>Exotel</span><span>Twilio</span><span>WhatsApp API</span>
+      </div>
+      <div class="doc-links">
+        <a href="#">View API Documentation</a>
+        <span style="color:var(--border-strong)">·</span>
+        <a href="book-demo-1.html">Talk to Technical Team</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="code-panel">
+        <div class="code-head">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="ep">POST /v2/voice/dispatch</span>
+          <span class="badge-dark">JSON Webhook</span>
+        </div>
+<pre>{
+  <span class="k">"lead_id"</span>: <span class="s">"PL-8921"</span>,
+  <span class="k">"customer"</span>: {
+    <span class="k">"name"</span>: <span class="s">"Rahul Sharma"</span>,
+    <span class="k">"phone"</span>: <span class="s">"+919876543210"</span>,
+    <span class="k">"preferred_language"</span>: <span class="s">"hi-IN"</span>
+  },
+  <span class="k">"campaign"</span>: <span class="s">"instant_personal_loan_v2"</span>,
+  <span class="k">"context_variables"</span>: {
+    <span class="k">"pre_approved_limit"</span>: <span class="n">500000</span>,
+    <span class="k">"rate_of_interest"</span>: <span class="s">"11.5%"</span>
+  },
+  <span class="k">"webhook_events"</span>: [
+    <span class="s">"call_answered"</span>,
+    <span class="s">"intent_classified"</span>,
+    <span class="s">"document_consent_given"</span>
+  ]
+}</pre>
+        <div class="code-foot">
+          <span class="ok">Response: 200 OK (Session Initiated)</span>
+          <span class="lat">Latency: 18ms</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY / PILLARS + STATS ============ -->
+<section class="section center" style="background:#fff;border-top:1px solid var(--border)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Institutional Rigor</span>
+      <h2>Engineered for institutional finance.</h2>
+    </div>
+    <div class="grid-4 reveal" style="text-align:left">
+      <div class="card pillar">
+        <span class="icon-chip"><span class="material-symbols-outlined">stacked_line_chart</span></span>
+        <b class="t">Scale</b>
+        <h3>100,000+ Concurrent</h3>
+        <p>High-concurrency telecommunication mesh built to withstand month-end surges and automated portfolio runs.</p>
+      </div>
+      <div class="card pillar">
+        <span class="icon-chip"><span class="material-symbols-outlined">neurology</span></span>
+        <b class="t">Intelligence</b>
+        <h3>Semantic Parsing</h3>
+        <p>Deep understanding of colloquial vernaculars, regional dialects, and financial terminology with zero hallucination.</p>
+      </div>
+      <div class="card pillar">
+        <span class="icon-chip"><span class="material-symbols-outlined">autorenew</span></span>
+        <b class="t">Automation</b>
+        <h3>Zero Manual Entry</h3>
+        <p>Instantaneous structured data conversion eliminating the need for manual agent summary notes and CRM typing.</p>
+      </div>
+      <div class="card pillar">
+        <span class="icon-chip"><span class="material-symbols-outlined">admin_panel_settings</span></span>
+        <b class="t">Control</b>
+        <h3>Auditable Governance</h3>
+        <p>Full recording compliance, role-based guardrails, explicit consent verification, and complete telemetry history.</p>
+      </div>
+    </div>
+    <div class="stats-band num reveal">
+      <div><b>24<em>×</em>7</b><span>Autonomous AI Availability</span></div>
+      <div><b>10<em>+</em></b><span>Multi-Language Indian Dialects</span></div>
+      <div><b>&lt;450<em>ms</em></b><span>End-to-End Latency</span></div>
+      <div><b>100<em>%</em></b><span>API-First &amp; LOS Compatible</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECURITY ============ -->
+<section class="section security" id="security">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Banking-Grade Architecture</span>
+      <h2>Built with financial data in mind.</h2>
+      <p class="lede">Every conversation, transcript, and audio segment complies with RBI Master Directions on IT Governance, Data Localization, and Digital Lending Guidelines.</p>
+    </div>
+    <div class="grid-4 reveal">
+      <div class="sec-card">
+        <span class="icon-chip"><span class="material-symbols-outlined">enhanced_encryption</span></span>
+        <h3>AES-256 / TLS 1.3</h3>
+        <p>End-to-end data encryption in transit and at rest with customer-managed keys.</p>
+      </div>
+      <div class="sec-card">
+        <span class="icon-chip"><span class="material-symbols-outlined">dns</span></span>
+        <h3>RBI Localization</h3>
+        <p>100% sovereign data residency within MeitY-approved Indian availability zones.</p>
+      </div>
+      <div class="sec-card">
+        <span class="icon-chip"><span class="material-symbols-outlined">record_voice_over</span></span>
+        <h3>Consent-First Audio</h3>
+        <p>Built-in verifiable voice OTP captures for regulatory credit bureau pulling.</p>
+      </div>
+      <div class="sec-card">
+        <span class="icon-chip"><span class="material-symbols-outlined">vpn_lock</span></span>
+        <h3>Private VPC &amp; On-Prem</h3>
+        <p>Flexible deployment options for tier-1 scheduled commercial banks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FUTURE ============ -->
+<section class="section center">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Coming Next · Future Platform</span>
+      <h2>Where QredPilot is going.</h2>
+      <p class="lede">AI Voice Operations is just the beginning of a broader intelligence layer designed to autonomously drive institutional credit and risk decisioning.</p>
+    </div>
+    <div class="grid-2 reveal" style="text-align:left">
+      <div class="card future-card">
+        <span class="icon-chip"><span class="material-symbols-outlined">memory</span></span>
+        <div>
+          <h3>Automation OS <span class="soon">Autonomous Pipeline</span></h3>
+          <p>Connect voice conversations directly with multi-source fintech underwriting workflows, automated bank statement fetching, and instant loan sanctioning pipelines.</p>
+        </div>
+      </div>
+      <div class="card future-card">
+        <span class="icon-chip"><span class="material-symbols-outlined">query_stats</span></span>
+        <div>
+          <h3>AI Credit Intelligence <span class="soon">Underwriting Engine</span></h3>
+          <p>Turn unstructured verbal data, banking telemetry, and GST inputs into actionable real-time risk scores with zero human underwriting intervention.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-panel reveal">
+      <h2>Ready to put AI to work?</h2>
+      <p>Build smarter customer operations with QredPilot AI Voice. Experience seamless voice agents engineered specifically for Indian financial services.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="book-demo-1.html" style="height:50px;padding:0 30px">Book a Demo <span class="material-symbols-outlined">arrow_forward</span></a>
+        <a class="btn btn-navy" href="#ai-voice-calling" style="height:50px;padding:0 30px">See AI Voice in Action</a>
+      </div>
+      <div class="cta-proof">
+        <span><span class="material-symbols-outlined">verified</span> Deploy in 48 Hours</span>
+        <span><span class="material-symbols-outlined">security</span> Zero Training Data Leakage</span>
+        <span><span class="material-symbols-outlined">account_balance</span> RBI Compliant</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html"><img src="assets/logo.png" alt="QredPilot"/></a>
+        <p>Enterprise-grade autonomous AI Voice Operations for underwriting, servicing, collections, and compliance in financial institutions.</p>
+        <div class="foot-badges">
+          <span>SOC2 Type II Certified</span>
+          <span>RBI Compliant</span>
+          <span>ISO 27001</span>
+        </div>
+      </div>
+      <div class="foot-col">
+        <em>Platform</em>
+        <a href="#ai-voice-calling">AI Voice Calling</a>
+        <a href="#ai-voice-ops">AI Voice Ops</a>
+        <a href="#voice-intelligence">Voice Intelligence</a>
+        <a href="#solutions">Solutions</a>
+      </div>
+      <div class="foot-col">
+        <em>Solutions</em>
+        <a href="#solutions">Lending</a>
+        <a href="#solutions">Fintech</a>
+        <a href="#solutions">Insurance</a>
+        <a href="#solutions">Financial Services</a>
+      </div>
+      <div class="foot-col">
+        <em>Resources</em>
+        <a href="#integrations">Documentation</a>
+        <a href="#integrations">API Reference</a>
+        <a href="#">System Status</a>
+        <a href="#security">Security</a>
+      </div>
+      <div class="foot-col">
+        <em>Company</em>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="book-demo-1.html">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 QredPilot Technologies Inc. All rights reserved.</span>
+      <span>Enterprise voice operations compliant with RBI Master Directions, ISO 27001, and SOC2 standards.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  // header shadow on scroll
+  const hdr = document.getElementById('hdr');
+  const onScroll = () => hdr.classList.toggle('scrolled', scrollY > 8);
+  addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  // mobile menu
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mmenu');
+  burger.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    burger.querySelector('span').textContent = open ? 'close' : 'menu';
+  });
+  menu.addEventListener('click', e => {
+    if (e.target.tagName === 'A') { menu.classList.remove('open'); burger.querySelector('span').textContent = 'menu'; }
+  });
+
+  // reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }, {threshold: 0.12, rootMargin: '0px 0px -40px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // live call timer tick
+  let s = 102;
+  const t = document.getElementById('callTimer');
+  setInterval(() => {
+    s++;
+    t.textContent = String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
+  }, 1000);
+})();
+</script>
+</body>
+</html>

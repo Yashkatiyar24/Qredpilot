@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary-fixed-variant":"#003fa5","inverse-primary":"#b3c5ff","primary":"#0053d4","surface-variant":"#dae2fd","on-secondary":"#ffffff","surface-dim":"#d2d9f4","on-primary":"#ffffff","secondary-container":"#d6e3fe","surface-bright":"#faf8ff","outline-variant":"#c2c6d8","surface-container-low":"#f2f3ff","background":"#faf8ff","on-surface-variant":"#424655","on-error-container":"#93000a","inverse-surface":"#283044","primary-fixed":"#dbe1ff","error":"#ba1a1a","on-background":"#131b2e","tertiary":"#006589","on-tertiary-fixed":"#001e2c","surface-container-lowest":"#ffffff","surface-tint":"#0054d7","secondary-fixed":"#d6e3fe","surface-container":"#eaedff","on-tertiary-container":"#ffffff","tertiary-container":"#007fac","outline":"#737687","on-tertiary":"#ffffff","secondary":"#525f75","on-secondary-fixed-variant":"#3a475c","tertiary-fixed":"#c4e7ff","on-primary-container":"#fffeff","surface-container-highest":"#dae2fd","primary-container":"#1e6bff","on-secondary-container":"#58657b","surface":"#faf8ff","on-error":"#ffffff","primary-fixed-dim":"#b3c5ff","tertiary-fixed-dim":"#7bd0ff","secondary-fixed-dim":"#bac7e1","on-tertiary-fixed-variant":"#004c69","error-container":"#ffdad6","on-secondary-fixed":"#0e1c2f","on-surface":"#131b2e","on-primary-fixed":"#001849","inverse-on-surface":"#eef0ff","surface-container-high":"#e2e7ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","space-xl":"2.5rem","space-md":"1rem","margin-lg":"3rem","gutter-sm":"1rem","space-lg":"1.5rem","margin":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-sm":"1rem"},"fontFamily":{"headline-xl-mobile":["Geist"],"label-sm":["Geist"],"body-lg":["Geist"],"headline-xl":["Geist"],"label-md":["Geist"],"body-sm":["Geist"],"body-md":["Geist"],"headline-lg":["Geist"],"numeric-data":["Geist"],"display-lg-mobile":["Geist"],"headline-sm":["Geist"],"title-md":["Geist"],"display-lg":["Geist"]},"fontSize":{"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"600"}],"label-md":["13px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.005em","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["30px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"600"}],"numeric-data":["14px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"500"}],"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="sticky top-0 z-50 w-full bg-surface-container-lowest/90 backdrop-blur-md border-b border-surface-container"><div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md"><div class="flex items-center flex-shrink-0"><a class="flex items-center" data-path="platform" href="#"><img alt="QredPilot" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VpLYA9zCg8qlzZ5YYCiuLqg2CwppPqeEu-bnZ48X9QoSJxe8wxeHsgpR-E6db0V2QA2MavL94OxBQpsaSD5Hza6qaYVDIEe0P2AuycH0mZOZyXj5q1Rb1r_23nGa7htUt_OT7EkGx5UDCcAz9RA0X_Ai5e2_8aiaArlv8XvnrAAqk85IM0cl6qS8hMzTzgrkJ-iTiGFz2vmh0I2z51xMMSq_JEDvHUqZP_bBJokYlX5FtUAZ7uUswTdy91cGetarAbFNDTO7vW52o"/></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md"><a aria-current="page" class="transition-colors text-primary font-title-md" data-path="platform" href="#">Platform</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="ai-voice-calling" href="#">AI Voice Calling</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="ai-voice-ops" href="#">AI Voice Ops</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="voice-intelligence" href="#">Voice Intelligence</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="solutions" href="#">Solutions</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="resources" href="#">Resources</a></nav><div class="flex items-center gap-space-md flex-shrink-0"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors px-space-sm py-space-xs" data-path="login" href="#">Login</a><a class="inline-flex items-center justify-center font-label-md text-label-md h-10 px-space-md rounded-lg bg-primary-container text-on-primary-container hover:bg-primary transition-all duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2" data-path="book-a-demo" href="#">Book a Demo</a><div class="flex items-center pl-space-xs border-l border-surface-container"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VpLYA9zCg8qlzZ5YYCiuLqg2CwppPqeEu-bnZ48X9QoSJxe8wxeHsgpR-E6db0V2QA2MavL94OxBQpsaSD5Hza6qaYVDIEe0P2AuycH0mZOZyXj5q1Rb1r_23nGa7htUt_OT7EkGx5UDCcAz9RA0X_Ai5e2_8aiaArlv8XvnrAAqk85IM0cl6qS8hMzTzgrkJ-iTiGFz2vmh0I2z51xMMSq_JEDvHUqZP_bBJokYlX5FtUAZ7uUswTdy91cGetarAbFNDTO7vW52o"/></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full bg-gradient-to-b from-surface-container-low via-surface to-surface-container-low overflow-hidden pb-space-xl">
+<div class="absolute -top-32 -left-32 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/3 -right-32 w-96 h-96 bg-tertiary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 pt-space-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Left Hero Column -->
+<div class="lg:col-span-6 flex flex-col items-start gap-space-md">
+<!-- Status pill -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm">
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-primary tracking-wide uppercase">AI Voice Operations for Financial Services</span>
+<span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Engine v2.4 Live</span>
+</div>
+<!-- Main Headline -->
+<h1 class="font-display-lg text-headline-xl lg:text-display-lg text-on-surface tracking-tight">
+            AI Voice Agents Built for <span class="text-primary-container">Financial Services.</span>
+</h1>
+<!-- Subheading & Body -->
+<p class="font-body-lg text-body-lg text-on-surface font-medium leading-snug">
+            Automate customer conversations with AI that can call, understand, qualify, and take action.
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            QredPilot helps institutional lenders, NBFCs, and fintechs deploy intelligent voice agents for instantaneous customer engagement, lead qualification, soft follow-ups, and end-to-end operational workflows.
+          </p>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<a class="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary font-title-md text-title-md transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" data-path="book-a-demo" href="#">
+<span>Book a Demo</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-title-md text-title-md transition-all duration-200 shadow-sm" href="#interactive-demo">
+<span class="material-symbols-outlined text-primary text-xl">play_circle</span>
+<span>See AI Voice in Action</span>
+</a>
+</div>
+<!-- Quick Metrics Ribbon -->
+<div class="grid grid-cols-3 gap-space-md pt-space-md w-full">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold"><450ms</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Turnaround Latency</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">10+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Indian Dialects</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary-container font-semibold">99.4%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Intent Accuracy</span>
+</div>
+</div>
+</div>
+<!-- Right Hero Visual: Real-time Voice Ops Telemetry -->
+<div class="lg:col-span-6 w-full" id="interactive-demo">
+<div class="relative bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden p-space-md lg:p-space-lg flex flex-col gap-space-md">
+<!-- Glassmorphism Accent Bar -->
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-low/50 px-space-sm py-space-xs rounded-lg">
+<div class="flex items-center gap-space-xs">
+<span class="h-2.5 w-2.5 rounded-full bg-error inline-block animate-pulse"></span>
+<span class="font-numeric-data text-numeric-data font-semibold text-on-surface tracking-wide">LIVE CALL CONNECTED · 01:42</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="h-4 w-1 bg-primary-container animate-[pulse_0.8s_ease-in-out_infinite]"></span>
+<span class="h-6 w-1 bg-primary animate-[pulse_0.6s_ease-in-out_infinite_0.1s]"></span>
+<span class="h-3 w-1 bg-primary-container animate-[pulse_0.9s_ease-in-out_infinite_0.2s]"></span>
+<span class="h-7 w-1 bg-primary animate-[pulse_0.5s_ease-in-out_infinite_0.15s]"></span>
+<span class="h-4 w-1 bg-primary-container animate-[pulse_0.7s_ease-in-out_infinite]"></span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-semibold">Hinglish Natural</span>
+</div>
+<!-- Customer Meta Strip -->
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant px-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary">account_circle</span>
+<span class="font-medium text-on-surface">Rahul Sharma</span>
+<span class="text-outline">·</span>
+<span>Lead #PL-8921</span>
+</div>
+<span class="px-2 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface">Salaried (IT Sector)</span>
+</div>
+<!-- Interactive Conversation Stream -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low/30 p-space-sm rounded-lg max-h-60 overflow-y-auto">
+<!-- AI Bubble -->
+<div class="flex items-start gap-2.5 max-w-[90%]">
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0 text-on-primary-container">
+<span class="material-symbols-outlined text-sm">smart_toy</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg shadow-sm">
+<p class="font-label-sm text-label-sm text-primary font-semibold mb-0.5">QredPilot AI Agent</p>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+                    "Namaste Rahul ji, main QredPilot automated credit desk se baat kar rahi hoon. Aapne instant pre-approved personal loan enquiry submit ki thi, kya hum baat kar sakte hain?"
+                  </p>
+</div>
+</div>
+<!-- Customer Bubble -->
+<div class="flex items-start gap-2.5 max-w-[90%] self-end flex-row-reverse">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center flex-shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+<div class="bg-secondary-container/60 p-3 rounded-lg shadow-sm text-right">
+<p class="font-label-sm text-label-sm text-on-secondary-fixed-variant font-semibold mb-0.5">Rahul (Applicant)</p>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+                    "Haan boliye, mujhe 5 lakh ka personal loan chahiye for home renovation."
+                  </p>
+</div>
+</div>
+<!-- AI Response Bubble -->
+<div class="flex items-start gap-2.5 max-w-[90%]">
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0 text-on-primary-container">
+<span class="material-symbols-outlined text-sm">smart_toy</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg shadow-sm">
+<p class="font-label-sm text-label-sm text-primary font-semibold mb-0.5">QredPilot AI Agent</p>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+                    "Bilkul! Aapka monthly salary account kaunse bank mein hai aur kya aapke paas 6 months bank statement available hai?"
+                  </p>
+</div>
+</div>
+</div>
+<!-- Structured Extracted Signals Overlay -->
+<div class="bg-surface-container-lowest rounded-lg p-space-sm shadow-sm space-y-space-xs">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Real-Time Extraction Telemetry</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary font-medium">
+<span class="material-symbols-outlined text-sm">bolt</span>
+                  410ms Direct Stream
+                </span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-body-sm">
+<div class="p-2 rounded bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Detected Intent</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Personal Loan (New)</span>
+<span class="font-label-sm text-label-sm text-primary block mt-0.5">99.4% Confidence</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Desired Amount</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">₹5,00,000</span>
+<span class="font-label-sm text-label-sm text-secondary block mt-0.5">Home Renovation</span>
+</div>
+</div>
+<!-- Next Action Automation Preview -->
+<div class="flex items-center justify-between p-2 rounded bg-primary-fixed/30 mt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">send_to_mobile</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Next Action: Trigger Instant WhatsApp Document Link</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-primary-container text-on-primary-container rounded">Ready</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: CORE PRODUCT ARCHITECTURE SECTION -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Unified Voice Infrastructure</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mt-space-xs">
+        One AI Voice Platform. Three Intelligence Layers.
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-space-xs">
+        From making natural calls to understanding deep financial intent and triggering instantaneous operational execution.
+      </p>
+<!-- Architecture Diagram Visual -->
+<div class="w-full mt-space-xl max-w-5xl">
+<!-- Top Central Hub -->
+<div class="flex justify-center">
+<div class="bg-inverse-surface text-inverse-on-surface px-8 py-5 rounded-2xl shadow-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-fixed-dim text-3xl">hub</span>
+<div class="text-left">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-surface-variant">Central Orchestrator</span>
+<h3 class="font-headline-sm text-headline-sm text-surface-bright tracking-tight">QredPilot AI Voice Operations Core</h3>
+</div>
+<span class="ml-4 px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm">High Concurrency</span>
+</div>
+</div>
+<!-- Vertical glowing connection lines -->
+<div class="h-10 flex justify-center">
+<div class="w-0.5 h-full bg-gradient-to-b from-inverse-surface via-primary to-primary-container"></div>
+</div>
+<!-- Horizontal Distribution Bar -->
+<div class="hidden md:flex justify-between items-center px-24 relative">
+<div class="w-full h-0.5 bg-surface-container-highest"></div>
+<div class="absolute left-1/4 -top-1.5 w-3 h-3 rounded-full bg-primary-container"></div>
+<div class="absolute left-1/2 -top-1.5 w-3 h-3 rounded-full bg-primary"></div>
+<div class="absolute left-3/4 -top-1.5 w-3 h-3 rounded-full bg-primary-container"></div>
+</div>
+<!-- Three Intelligence Layers Bento -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-6 text-left">
+<!-- Layer 01 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Layer 01</span>
+<span class="w-9 h-9 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">call</span>
+</span>
+</div>
+<h4 class="font-title-md text-headline-sm text-on-surface font-semibold mb-2">AI Voice Calling</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Ultra-low latency conversational engine delivering human-like voice synthesis and spontaneous Indian dialect recognition.
+              </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-2 font-label-md text-label-md text-primary font-semibold">
+<span>Natural Turn-Taking</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Layer 02 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Layer 02</span>
+<span class="w-9 h-9 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">settings_voice</span>
+</span>
+</div>
+<h4 class="font-title-md text-headline-sm text-on-surface font-semibold mb-2">AI Voice Ops</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Autonomous campaign scheduler, lead queuing dispatcher, dynamic pacing controller, and automated operational retry pipelines.
+              </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-2 font-label-md text-label-md text-primary font-semibold">
+<span>Workflow Orchestration</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Layer 03 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Layer 03</span>
+<span class="w-9 h-9 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">psychology</span>
+</span>
+</div>
+<h4 class="font-title-md text-headline-sm text-on-surface font-semibold mb-2">Voice Intelligence</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Contextual entity extraction, fraud signal monitoring, repayment propensity scoring, and real-time structured CRM webhook delivery.
+              </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-2 font-label-md text-label-md text-primary font-semibold">
+<span>Structured CRM Output</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: PRODUCT 01 — AI VOICE CALLING -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Visual Call Telemetry Interface -->
+<div class="lg:col-span-6 order-2 lg:order-1">
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-lg">
+<div class="flex items-center justify-between mb-space-md pb-space-sm">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-2xl">cloud_upload</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Live Outbound Execution</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dialer node #VOIP-09884 · Primary Trunk</p>
+</div>
+</div>
+<span class="px-2.5 py-1 bg-surface-container text-on-surface rounded-full font-label-sm text-label-sm">Active Stream</span>
+</div>
+<!-- Frequency Visualizer -->
+<div class="bg-surface-container-low p-space-md rounded-xl mb-space-md">
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-2">
+<span class="text-on-surface-variant font-medium">Audio Spectrum & Sentiment</span>
+<span class="text-primary font-semibold">High Intent / Polite</span>
+</div>
+<div class="h-16 flex items-center justify-between gap-1 px-4 bg-surface-container-lowest rounded-lg">
+<span class="w-1.5 h-6 bg-primary-container rounded-full"></span>
+<span class="w-1.5 h-10 bg-primary rounded-full"></span>
+<span class="w-1.5 h-14 bg-primary-container rounded-full"></span>
+<span class="w-1.5 h-8 bg-primary rounded-full"></span>
+<span class="w-1.5 h-12 bg-primary-container rounded-full"></span>
+<span class="w-1.5 h-15 bg-primary rounded-full"></span>
+<span class="w-1.5 h-9 bg-primary-container rounded-full"></span>
+<span class="w-1.5 h-11 bg-primary rounded-full"></span>
+<span class="w-1.5 h-13 bg-primary-container rounded-full"></span>
+<span class="w-1.5 h-7 bg-primary rounded-full"></span>
+<span class="w-1.5 h-10 bg-primary-container rounded-full"></span>
+<span class="w-1.5 h-5 bg-primary rounded-full"></span>
+</div>
+</div>
+<!-- Features Highlights in Card -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary text-xl mb-1">translate</span>
+<p class="font-title-md text-body-md font-semibold text-on-surface">Multilingual Fluidity</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Hindi, Hinglish, Tamil, Telugu, Marathi & English.</p>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary text-xl mb-1">speed</span>
+<p class="font-title-md text-body-md font-semibold text-on-surface"><450ms Turn Taking</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Eliminates awkward pauses for organic human pacing.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Text Description -->
+<div class="lg:col-span-6 order-1 lg:order-2 flex flex-col items-start gap-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Product 01</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">AI that talks to your customers.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            Deploy natural-sounding, hyper-realistic AI voice agents that handle customer conversations at massive enterprise scale without losing conversational nuance.
+          </p>
+<div class="space-y-space-sm w-full">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">check_circle</span>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Outbound & Inbound Autonomous Calling</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Engage hot inbound loan enquiries instantly or run outbound campaigns to re-engage lapsed applicants.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">check_circle</span>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Lead Qualification & Parameter Ingestion</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Verify employment type, monthly turnover, active obligations, and loan eligibility on the fly.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">check_circle</span>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Human Supervisor Seamless Handoff</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Instantly transfer complex, high-value discussions to live underwriters with live audio stream history.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: PRODUCT 02 — AI VOICE OPS -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center">
+<div class="text-center max-w-3xl mb-space-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Product 02</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mt-space-xs">
+          Turn every call into an automated operation.
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
+          Manage dynamic campaigns, conversations, outcomes, and automated escalations from one centralized voice operations platform.
+        </p>
+</div>
+<!-- Enterprise Voice Ops Console -->
+<div class="w-full bg-surface-container-lowest rounded-2xl shadow-xl overflow-hidden p-space-lg">
+<!-- Top Metrics Strip -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md pb-space-lg">
+<div class="flex flex-col p-space-sm bg-surface-container-low rounded-xl">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Campaigns</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">14</span>
+<span class="font-label-sm text-label-sm text-primary mt-1">98.2% Pacing Rate</span>
+</div>
+<div class="flex flex-col p-space-sm bg-surface-container-low rounded-xl">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Live Active Calls</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold mt-1">1,280</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Concurrency Peak</span>
+</div>
+<div class="flex flex-col p-space-sm bg-surface-container-low rounded-xl">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Lead Qual. Rate</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">78.4%</span>
+<span class="font-label-sm text-label-sm text-primary mt-1">+14% vs Human Agent</span>
+</div>
+<div class="flex flex-col p-space-sm bg-surface-container-low rounded-xl">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Avg Handle Time</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">2m 14s</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Optimized script</span>
+</div>
+</div>
+<!-- Campaign Pipeline Table -->
+<div class="overflow-x-auto my-space-md">
+<table class="w-full text-left font-body-md text-body-md">
+<thead>
+<tr class="bg-surface-container text-on-surface font-title-md text-body-sm">
+<th class="p-3 rounded-l-lg">Campaign Name</th>
+<th class="p-3">Queued Leads</th>
+<th class="p-3">Execution Rate</th>
+<th class="p-3">Qualified Rate</th>
+<th class="p-3 rounded-r-lg">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface">
+<tr class="hover:bg-surface-container-low/50">
+<td class="p-3 font-semibold">Personal Loan Qualification Q3</td>
+<td class="p-3 font-numeric-data">12,400</td>
+<td class="p-3">
+<div class="w-32 bg-surface-container rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 82%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5 block">82%</span>
+</td>
+<td class="p-3 font-numeric-data text-primary">76.5%</td>
+<td class="p-3"><span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Active Auto-Dial</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low/50">
+<td class="p-3 font-semibold">Pre-EMI Soft Reminder Cycle</td>
+<td class="p-3 font-numeric-data">4,500</td>
+<td class="p-3">
+<div class="w-32 bg-surface-container rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5 block">95%</span>
+</td>
+<td class="p-3 font-numeric-data text-primary">91.0% PTP</td>
+<td class="p-3"><span class="px-2.5 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm">Completed Batch</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Automated Operational Workflow Row -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 mt-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">alt_route</span>
+<span class="font-title-md text-title-md text-on-surface">End-to-End Autonomous Pipeline:</span>
+</div>
+<div class="flex flex-wrap items-center gap-2 font-label-sm text-label-sm text-on-surface">
+<span class="px-3 py-1 bg-surface-container-lowest rounded-md shadow-sm">Lead Ingestion</span>
+<span class="material-symbols-outlined text-xs text-outline">arrow_forward</span>
+<span class="px-3 py-1 bg-surface-container-lowest rounded-md shadow-sm">AI Dial Trigger</span>
+<span class="material-symbols-outlined text-xs text-outline">arrow_forward</span>
+<span class="px-3 py-1 bg-surface-container-lowest rounded-md shadow-sm">Intent Extraction</span>
+<span class="material-symbols-outlined text-xs text-outline">arrow_forward</span>
+<span class="px-3 py-1 bg-primary text-on-primary rounded-md shadow-sm font-semibold">CRM & LOS Webhook</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: PRODUCT 03 — VOICE INTELLIGENCE -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Text Column -->
+<div class="lg:col-span-6 flex flex-col items-start gap-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Product 03</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Every conversation becomes intelligence.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            Turn unstructured customer voice dialogue into structured, verified insights that your risk officers, underwriting models, and CRM workflows can immediately act upon.
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm w-full">
+<div class="p-space-sm bg-surface-container-lowest rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-xl">analytics</span>
+<h4 class="font-title-md text-title-md text-on-surface mt-1">Lead Quality Scoring</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Proprietary risk & propensity calculation based on vocal markers and financial responses.</p>
+</div>
+<div class="p-space-sm bg-surface-container-lowest rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-xl">dataset</span>
+<h4 class="font-title-md text-title-md text-on-surface mt-1">Zero-Loss Entity Capture</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Extract PAN, Aadhaar consent, monthly revenue, company name, and loan terms verbatim.</p>
+</div>
+</div>
+</div>
+<!-- Structured Conversation Intelligence Inspector Visual -->
+<div class="lg:col-span-6 w-full">
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-xl space-y-space-md">
+<!-- Header -->
+<div class="flex items-center justify-between pb-space-xs">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Voice Intelligence Inspector</span>
+<h4 class="font-title-md text-title-md text-on-surface">Conversation Analysis #REC-7712</h4>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 bg-surface-container-highest/60 text-primary font-semibold font-numeric-data text-numeric-data rounded-lg">Score: 94/100</span>
+</div>
+</div>
+<!-- Key Info Extracted Grid -->
+<div class="grid grid-cols-3 gap-2 bg-surface-container-low p-space-sm rounded-xl text-center">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Loan Requirement</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">₹5,00,000</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Existing EMI</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">₹14,200</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Bureau Consent</span>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">Granted</span>
+</div>
+</div>
+<!-- Actionable AI Summary Box -->
+<div class="p-space-sm bg-primary-fixed/20 rounded-xl">
+<div class="flex items-center gap-1.5 mb-1 text-primary">
+<span class="material-symbols-outlined text-sm">summarize</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">Actionable Executive Summary</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                "Customer is interested in a personal loan. Requested callback tomorrow. Estimated requirement: ₹5L. Documents pending: income proof. Auto-scheduled follow-up call at 11:30 AM."
+              </p>
+</div>
+<!-- Instant One-Click / Auto Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-xs pt-space-xs">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-sm text-primary">sync</span>
+<span>Sync to Salesforce / FinnOne</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-sm text-tertiary">chat</span>
+<span>Send WhatsApp Checklist</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-sm">assignment_turned_in</span>
+<span>Escalate to Underwriter</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: HOW IT WORKS (Connected 5-Step Flow) -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center">
+<div class="text-center max-w-2xl mb-space-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Autonomous Execution Cycle</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mt-space-xs">
+          From conversation to action.
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
+          How QredPilot turns seconds of dialogue into verified financial execution.
+        </p>
+</div>
+<!-- Horizontal 5-Step Connected Flow -->
+<div class="grid grid-cols-1 md:grid-cols-5 gap-space-sm w-full">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm relative flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">01</span>
+<span class="material-symbols-outlined text-secondary text-2xl">call_log</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold mb-1">CONNECT</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">AI connects with the borrower via enterprise SIP trunks and adaptive pacing.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm relative flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">02</span>
+<span class="material-symbols-outlined text-secondary text-2xl">forum</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold mb-1">CONVERSE</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Understands context and responds naturally in Hindi, Hinglish, or English.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm relative flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">03</span>
+<span class="material-symbols-outlined text-secondary text-2xl">rule</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold mb-1">QUALIFY</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Verifies eligibility, credit requirement, income statements, and voice OTP consent.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm relative flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">04</span>
+<span class="material-symbols-outlined text-secondary text-2xl">psychology</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold mb-1">UNDERSTAND</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Converts raw audio into structured, auditable parameters with sentiment tags.</p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm relative flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">05</span>
+<span class="material-symbols-outlined text-secondary text-2xl">rocket_launch</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold mb-1">ACT</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">QredPilot triggers CRM updates, payment links, or instant underwriter escalations.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: USE CASES (6 Enterprise Cards) -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Financial Operations</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mt-space-xs">
+            Built for high-volume financial operations.
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-2 md:mt-0">
+          Engineered to satisfy institutional compliance while dramatically cutting operational cost per funded account.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- 1. Lead Qualification -->
+<div class="p-space-lg bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined">filter_list</span>
+</div>
+<h3 class="font-title-md text-headline-sm text-on-surface font-semibold mb-2">Lead Qualification</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Automatically call and qualify every incoming digital lead in under 60 seconds, capturing intent and pre-verifying critical parameters.
+          </p>
+</div>
+<!-- 2. Loan Sales -->
+<div class="p-space-lg bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary mb-space-sm">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<h3 class="font-title-md text-headline-sm text-on-surface font-semibold mb-2">Loan Sales</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Engage prospects, explain personalized pre-approved offers, answer repayment questions, and generate immediate loan applications.
+          </p>
+</div>
+<!-- 3. Customer Verification -->
+<div class="p-space-lg bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary mb-space-sm">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<h3 class="font-title-md text-headline-sm text-on-surface font-semibold mb-2">Customer Verification</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Conduct structured KYC, workplace, and address confirmation conversations accompanied by tamper-proof voice audit trails.
+          </p>
+</div>
+<!-- 4. Follow-ups -->
+<div class="p-space-lg bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined">schedule_send</span>
+</div>
+<h3 class="font-title-md text-headline-sm text-on-surface font-semibold mb-2">Follow-ups</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Proactively re-engage abandoned applications, remind borrowers about pending documentation uploads, and schedule underwriting reviews.
+          </p>
+</div>
+<!-- 5. Collections & Reminders -->
+<div class="p-space-lg bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary mb-space-sm">
+<span class="material-symbols-outlined">notifications_active</span>
+</div>
+<h3 class="font-title-md text-headline-sm text-on-surface font-semibold mb-2">Collections & Reminders</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Gentle, empathetic, and compliant early-bucket reminders that verify Promise to Pay (PTP) agreements and trigger dynamic UPI payment links.
+          </p>
+</div>
+<!-- 6. Customer Support -->
+<div class="p-space-lg bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary mb-space-sm">
+<span class="material-symbols-outlined">headset_mic</span>
+</div>
+<h3 class="font-title-md text-headline-sm text-on-surface font-semibold mb-2">Customer Support</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Resolve tier-1 queries, dispatch NOC certificates, furnish interest rate certificates, and update contact details 24/7 with zero waiting time.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 8: FINTECH WORKFLOW & INTEGRATION -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Content Side -->
+<div class="lg:col-span-5 flex flex-col items-start gap-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Fintech Integration</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Connect AI voice to your existing stack.</h2>
+<p class="font-title-md text-title-md text-primary font-medium">API-first. Integration-ready.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            QredPilot seamlessly fits into your current Loan Origination Systems (LOS), CRM setups, and communication infrastructure via flexible webhooks and native connectors.
+          </p>
+<!-- Ecosystem badging -->
+<div class="pt-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-3 font-semibold">Native Core Integrations</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md font-medium">Salesforce</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md font-medium">LeadSquared</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md font-medium">FinnOne Neo</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md font-medium">Pennant</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md font-medium">Exotel</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md font-medium">Twilio</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md font-medium">WhatsApp API</span>
+</div>
+</div>
+<div class="flex items-center gap-4 pt-space-xs">
+<a class="font-label-md text-label-md text-primary font-semibold hover:underline inline-flex items-center gap-1" href="#">
+<span>View API Documentation</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<span class="text-outline">·</span>
+<a class="font-label-md text-label-md text-on-surface font-semibold hover:underline" href="#">Talk to Technical Team</a>
+</div>
+</div>
+<!-- Code / Webhook Snippet Visual -->
+<div class="lg:col-span-7 w-full">
+<div class="bg-inverse-surface rounded-2xl p-space-md shadow-2xl text-inverse-on-surface font-mono text-body-sm">
+<div class="flex items-center justify-between pb-3 border-b border-surface-variant/20 mb-3">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+<span class="w-3 h-3 rounded-full bg-secondary-fixed"></span>
+<span class="w-3 h-3 rounded-full bg-primary-fixed"></span>
+<span class="ml-2 font-label-sm text-label-sm text-surface-variant font-mono">POST /v2/voice/dispatch</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold uppercase">JSON Webhook</span>
+</div>
+<pre class="overflow-x-auto text-surface-container-high leading-relaxed"><code>{
+  <span class="text-tertiary-fixed">"lead_id"</span>: <span class="text-primary-fixed">"PL-8921"</span>,
+  <span class="text-tertiary-fixed">"customer"</span>: {
+    <span class="text-tertiary-fixed">"name"</span>: <span class="text-surface-bright">"Rahul Sharma"</span>,
+    <span class="text-tertiary-fixed">"phone"</span>: <span class="text-surface-bright">"+919876543210"</span>,
+    <span class="text-tertiary-fixed">"preferred_language"</span>: <span class="text-surface-bright">"hi-IN"</span>
+  },
+  <span class="text-tertiary-fixed">"campaign"</span>: <span class="text-surface-bright">"instant_personal_loan_v2"</span>,
+  <span class="text-tertiary-fixed">"context_variables"</span>: {
+    <span class="text-tertiary-fixed">"pre_approved_limit"</span>: <span class="text-surface-bright">500000</span>,
+    <span class="text-tertiary-fixed">"rate_of_interest"</span>: <span class="text-surface-bright">"11.5%"</span>
+  },
+  <span class="text-tertiary-fixed">"webhook_events"</span>: [
+    <span class="text-surface-bright">"call_answered"</span>,
+    <span class="text-surface-bright">"intent_classified"</span>,
+    <span class="text-surface-bright">"document_consent_given"</span>
+  ]
+}</code></pre>
+<div class="mt-3 pt-3 border-t border-surface-variant/20 flex items-center justify-between text-body-sm text-surface-dim">
+<span>Response: 200 OK (Session Initiated)</span>
+<span class="text-primary-fixed">Latency: 18ms</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 9: WHY QREDPILOT (4 Pillars) -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Institutional Rigor</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mt-space-xs">
+          Engineered for institutional finance.
+        </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Scale -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Scale</span>
+<h3 class="font-title-md text-headline-sm text-on-surface font-semibold mt-2 mb-2">100,000+ Concurrent</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              High-concurrency telecommunication mesh built to withstand month-end surges and automated portfolio runs.
+            </p>
+</div>
+<span class="material-symbols-outlined text-3xl text-primary mt-space-md">stacked_line_chart</span>
+</div>
+<!-- Intelligence -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Intelligence</span>
+<h3 class="font-title-md text-headline-sm text-on-surface font-semibold mt-2 mb-2">Semantic Parsing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Deep understanding of colloquial vernaculars, regional dialects, and financial terminology with zero hallucination.
+            </p>
+</div>
+<span class="material-symbols-outlined text-3xl text-primary mt-space-md">psychology_alt</span>
+</div>
+<!-- Automation -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Automation</span>
+<h3 class="font-title-md text-headline-sm text-on-surface font-semibold mt-2 mb-2">Zero Manual Entry</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Instantaneous structured data conversion eliminating the need for manual agent summary notes and CRM typing.
+            </p>
+</div>
+<span class="material-symbols-outlined text-3xl text-primary mt-space-md">autorenew</span>
+</div>
+<!-- Control -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Control</span>
+<h3 class="font-title-md text-headline-sm text-on-surface font-semibold mt-2 mb-2">Auditable Governance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Full recording compliance, role-based guardrails, explicit consent verification, and complete telemetry history.
+            </p>
+</div>
+<span class="material-symbols-outlined text-3xl text-primary mt-space-md">shield_person</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 10: PERFORMANCE METRICS STRIP -->
+<section class="w-full py-space-lg bg-surface border-y-0">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-space-md text-center">
+<div class="p-space-md bg-surface-container-low rounded-xl">
+<span class="font-headline-xl text-headline-xl text-primary font-bold block">24×7</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-1 block">Autonomous AI Availability</span>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold block">10+</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-1 block">Multi-Language Indian Dialects</span>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl">
+<span class="font-headline-xl text-headline-xl text-primary font-bold block"><500ms</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-1 block">End-to-End Latency</span>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold block">100%</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-1 block">API-First & LOS Compatible</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 11: SECURITY & ENTERPRISE COMPLIANCE -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-xl shadow-md">
+<div class="flex flex-col lg:flex-row items-start justify-between gap-space-lg">
+<div class="max-w-xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase font-semibold mb-space-sm">
+<span class="material-symbols-outlined text-sm">lock</span>
+              Banking-Grade Architecture
+            </div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+              Built with financial data in mind.
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
+              Every conversation, transcript, and audio segment complies with RBI Master Directions on IT Governance, Data Localization, and Digital Lending Guidelines.
+            </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md w-full lg:max-w-lg">
+<div class="p-space-sm bg-surface-container-low rounded-xl">
+<span class="font-title-md text-title-md text-on-surface font-semibold block">AES-256 / TLS 1.3</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1 block">End-to-end data encryption in transit and at rest with customer-managed keys.</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-xl">
+<span class="font-title-md text-title-md text-on-surface font-semibold block">RBI Localization</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1 block">100% sovereign data residency within MeitY-approved Indian availability zones.</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-xl">
+<span class="font-title-md text-title-md text-on-surface font-semibold block">Consent-First Audio</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1 block">Built-in verifiable voice OTP captures for regulatory credit bureau pulling.</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-xl">
+<span class="font-title-md text-title-md text-on-surface font-semibold block">Private VPC & On-Prem</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1 block">Flexible deployment options for tier-1 scheduled commercial banks.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 12: FUTURE PLATFORM (COMING NEXT) -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="bg-surface-container-low/60 rounded-3xl p-space-lg lg:p-space-xl">
+<div class="flex items-center gap-2 mb-space-sm">
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm uppercase tracking-wider font-bold">
+            Coming Next · Future Platform
+          </span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+          Where QredPilot is going.
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-space-xs">
+          AI Voice Operations is just the beginning of a broader intelligence layer designed to autonomously drive institutional credit and risk decisioning.
+        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg mt-space-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm opacity-90 hover:opacity-100 transition-opacity">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Autonomous Pipeline</span>
+<span class="material-symbols-outlined text-secondary">memory</span>
+</div>
+<h3 class="font-title-md text-headline-sm text-on-surface font-semibold mb-2">Automation OS</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Connect voice conversations directly with multi-source fintech underwriting workflows, automated bank statement fetching, and instant loan sanctioning pipelines.
+            </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm opacity-90 hover:opacity-100 transition-opacity">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Underwriting Engine</span>
+<span class="material-symbols-outlined text-secondary">model_training</span>
+</div>
+<h3 class="font-title-md text-headline-sm text-on-surface font-semibold mb-2">AI Credit Intelligence</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Turn unstructured verbal data, banking telemetry, and GST inputs into actionable real-time risk scores with zero human underwriting intervention.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 13: FINAL CTA -->
+<section class="w-full py-space-xl bg-inverse-surface text-inverse-on-surface relative overflow-hidden">
+<!-- Subtle electric blue background aura -->
+<div class="absolute -top-40 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-highest/20 flex items-center justify-center text-primary-fixed mb-space-md">
+<span class="material-symbols-outlined text-3xl">headset</span>
+</div>
+<h2 class="font-display-lg text-headline-xl lg:text-display-lg text-surface-bright tracking-tight max-w-3xl">
+        Ready to put AI to work?
+      </h2>
+<p class="font-body-lg text-body-lg text-surface-dim max-w-xl mt-space-xs">
+        Build smarter customer operations with QredPilot AI Voice. Experience seamless voice agents engineered specifically for Indian financial services.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-space-sm mt-space-lg">
+<a class="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary font-title-md text-title-md transition-all duration-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2" data-path="book-a-demo" href="#">
+<span>Book a Demo</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-surface-container-highest/20 text-surface-bright hover:bg-surface-container-highest/30 font-title-md text-title-md transition-all duration-200" href="#interactive-demo">
+<span>See AI Voice in Action</span>
+</a>
+</div>
+<div class="flex items-center gap-6 mt-space-lg text-surface-dim font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary-fixed">verified</span>
+<span>Deploy in 48 Hours</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary-fixed">security</span>
+<span>Zero Training Data Leakage</span>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-inverse-surface text-inverse-on-surface pt-space-xl pb-space-lg"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="flex flex-col md:flex-row items-start justify-between pb-space-lg border-b border-surface-variant/20 gap-space-md"><div><img alt="QredPilot" class="h-8 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida/AEtjO1VpLYA9zCg8qlzZ5YYCiuLqg2CwppPqeEu-bnZ48X9QoSJxe8wxeHsgpR-E6db0V2QA2MavL94OxBQpsaSD5Hza6qaYVDIEe0P2AuycH0mZOZyXj5q1Rb1r_23nGa7htUt_OT7EkGx5UDCcAz9RA0X_Ai5e2_8aiaArlv8XvnrAAqk85IM0cl6qS8hMzTzgrkJ-iTiGFz2vmh0I2z51xMMSq_JEDvHUqZP_bBJokYlX5FtUAZ7uUswTdy91cGetarAbFNDTO7vW52o"/><p class="mt-space-xs font-label-sm text-label-sm uppercase tracking-wider text-surface-variant">AI Voice Operations for Financial Services</p></div><div class="flex items-center gap-space-sm"><span class="inline-flex items-center px-space-sm py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-highest/20 text-surface-bright"><span class="w-1.5 h-1.5 rounded-full bg-primary-container mr-1.5 animate-pulse"></span>SOC2 Type II Certified</span><span class="inline-flex items-center px-space-sm py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-highest/20 text-surface-bright">RBI Compliant</span></div></div><div class="grid grid-cols-2 md:grid-cols-5 gap-space-lg py-space-xl"><div class="flex flex-col gap-space-sm"><h4 class="font-label-sm text-label-sm uppercase tracking-wider text-surface-variant">Platform</h4><ul class="flex flex-col gap-space-xs"><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="ai-voice-calling" href="#">AI Voice Calling</a></li><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="ai-voice-ops" href="#">AI Voice Ops</a></li><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="voice-intelligence" href="#">Voice Intelligence</a></li><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="solutions" href="#">Solutions</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-sm text-label-sm uppercase tracking-wider text-surface-variant">Solutions</h4><ul class="flex flex-col gap-space-xs"><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="lending-solutions" href="#">Lending</a></li><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="fintech-solutions" href="#">Fintech</a></li><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="insurance-solutions" href="#">Insurance</a></li><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="financial-services" href="#">Financial Services</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-sm text-label-sm uppercase tracking-wider text-surface-variant">Resources</h4><ul class="flex flex-col gap-space-xs"><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="resources" href="#">Documentation</a></li><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="api-reference" href="#">API Reference</a></li><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="system-status" href="#">System Status</a></li><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="security" href="#">Security</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-sm text-label-sm uppercase tracking-wider text-surface-variant">Company</h4><ul class="flex flex-col gap-space-xs"><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="about" href="#">About</a></li><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="careers" href="#">Careers</a></li><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="contact" href="#">Contact</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-sm text-label-sm uppercase tracking-wider text-surface-variant">Legal</h4><ul class="flex flex-col gap-space-xs"><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a></li><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></li><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="rbi-governance" href="#">RBI / Data Governance</a></li><li data-active-classes="text-surface-bright font-title-md"><a class="font-body-md text-body-md text-surface-dim hover:text-surface-bright transition-colors" data-path="security-disclosures" href="#">Security Disclosures</a></li></ul></div></div><div class="pt-space-lg border-t border-surface-variant/20 flex flex-col md:flex-row items-center justify-between gap-space-sm"><p class="font-body-sm text-body-sm text-surface-dim">© 2025 QredPilot Technologies Inc. All rights reserved.</p><p class="font-body-sm text-body-sm text-surface-variant">Enterprise voice operations compliant with RBI Master Directions, ISO 27001, and SOC2 standards.</p></div></div></footer></body></html>
